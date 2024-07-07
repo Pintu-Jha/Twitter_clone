@@ -1,6 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export const USER_Credensial = 'userCredensial';
 export const USER_DATA = 'userData'
 export const TOKEN_KEY = 'token';
 

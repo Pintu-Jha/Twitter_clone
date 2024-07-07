@@ -25,7 +25,7 @@ import validator from '../../../utills/validations';
 import {fontNames} from '../../../styles/typography';
 import {userLogin} from '../../../redux/actions/auth';
 import {useDispatch} from 'react-redux';
-import {saveUserCredential, saveUserData, saveUseruserCredential} from '../../../redux/reducers/auth';
+import {saveUserCredential, saveUserData, saveUseruserCredential} from '../../../redux/reducers/main';
 
 const LoginScreen = ({navigation, route}) => {
   const dispatch = useDispatch();
@@ -50,7 +50,7 @@ const LoginScreen = ({navigation, route}) => {
       try {
         const response = await userLogin();
         console.log('response>>', response);
-        dispatch(saveUserCredential(response));
+        dispatch(saveUserData(response));
       } catch (err) {
         console.error(err);
       }

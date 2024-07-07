@@ -6,7 +6,7 @@ import AuthStack from './AuthStack';
 import {useSelector} from 'react-redux';
 
 const AppStack = () => {
-  const AuthUserDetails = useSelector(state => state?.auth?.userCredential);
+  const AuthUserDetails = useSelector(state => state?.main?.userData?.email);
   console.log("AuthUserDetails>",AuthUserDetails);
   return (
     <View style={{flex: 1}}>

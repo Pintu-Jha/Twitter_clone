@@ -22,7 +22,7 @@ import TextInputComp from '../../common/TextInputComp';
 import BottonComp from '../../common/BottonComp';
 import navigationString from '../../../navigation/navigationString';
 import {fontNames} from '../../../styles/typography';
-import {retrieveItem, USER_Credensial} from '../../../utills/CustomAsyncStorage';
+import {retrieveItem, USER_Credensial, USER_DATA} from '../../../utills/CustomAsyncStorage';
 
 const TakeUserName = ({navigation}) => {
   const [username, setuserName] = useState('');
@@ -30,7 +30,7 @@ const TakeUserName = ({navigation}) => {
 
   const handleIsUserNameValid = async () => {
     try {
-      const res = await retrieveItem(USER_Credensial);
+      const res = await retrieveItem(USER_DATA);
       if (res.email === username || res.name === username) {
         navigation.navigate(navigationString.LOGIN_SCREEN, {username,res});
       }

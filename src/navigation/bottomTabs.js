@@ -57,6 +57,7 @@ function BottomTabs() {
     <SafeAreaView style={{flex: 1}}>
       <View style={{flex: 1}}>
         <Tab.Navigator
+        initialRouteName={navigationString.HOME_SCREEN}
           screenOptions={{
             tabBarShowLabel: false,
             tabBarStyle: {

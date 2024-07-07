@@ -3,9 +3,10 @@ import React, {useEffect, useState} from 'react';
 import Index from './src/navigation/index';
 import {Provider} from 'react-redux';
 import store from './src/redux/store';
-import {retrieveItem, USER_Credensial} from './src/utills/CustomAsyncStorage';
+import {retrieveItem, USER_Credensial, USER_DATA} from './src/utills/CustomAsyncStorage';
 import {saveUserCredential} from './src/redux/reducers/auth';
 import LoadingScreen from './src/components/common/Loader';
+import { saveUserData } from './src/redux/reducers/main';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -22,9 +23,9 @@ const App = () => {
 
   const initUser = async () => {
     try {
-      let data = await retrieveItem('userCredensial');
+      let data = await retrieveItem(USER_DATA);
       console.log(data);
-      dispatch(saveUserCredential(data));
+      dispatch(saveUserData(data));
     } catch (error) {
       console.log('no data found');
       setLoading(false);

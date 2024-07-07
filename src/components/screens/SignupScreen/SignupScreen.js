@@ -24,7 +24,7 @@ import navigationString from '../../../navigation/navigationString';
 import {fontNames} from '../../../styles/typography';
 import {userSignup} from '../../../redux/actions/auth';
 import {useDispatch} from 'react-redux';
-import {saveUserCredential, saveUserData, saveUseruserCredential} from '../../../redux/reducers/auth';
+import {saveUserData, } from '../../../redux/reducers/main';
 
 const SignupScreen = ({navigation, route}) => {
   const dispatch = useDispatch();
@@ -56,7 +56,7 @@ const SignupScreen = ({navigation, route}) => {
         };
         const response = await userSignup(newUser);
         console.log('response>>>',response);
-        dispatch(saveUserCredential(newUser));
+        dispatch(saveUserData(newUser));
       } catch (err) {
         console.error(err);
         console.log('isError>>', err);
